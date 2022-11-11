@@ -59,10 +59,7 @@ class Node:
 
 def guesser(tree, answers):
     # Your solution here!
-    tree_trace = tree
-    while tree_trace.left or tree_trace.right:
-        tree_trace = tree_trace.right if answers[tree_trace.value] else tree_trace.left
-    return tree_trace.value
+    pass
 
 
 

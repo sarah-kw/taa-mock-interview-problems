@@ -55,18 +55,7 @@ class Node:
 
 def convert(city_dict):
     # Your solution here!
-    itinerary_start = None
-    destinations = city_dict.values()
-    for key in city_dict:
-        if key not in destinations:
-            itinerary_start = Node(key)
-
-    city = itinerary_start
-    while city.value in city_dict:
-        city.next = Node(city_dict[city.value])
-        city = city.next
-
-    return itinerary_start
+    pass
 
 
 '''Tests start here'''

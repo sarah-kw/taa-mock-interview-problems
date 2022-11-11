@@ -22,57 +22,8 @@ Write a function that takes in a square grid and returns the size of the
 largest group of zeroes.
 '''
 
-def look_for_zeros(point, grid):
-    x = point[1]
-    y = point[0]
-    zeros = []
-
-    if x - 1 >= 0 and grid[y][x-1] == 0:
-        zeros.append((y, x-1))
-    if y - 1 >= 0 and grid[y-1][x] == 0:
-        zeros.append((y-1, x))
-    if x + 1 < len(grid[y]) and grid[y][x+1] == 0:
-        zeros.append((y, x+1))
-    if y + 1 < len(grid) and grid[y+1][x] == 0:
-        zeros.append((y+1, x))
-    
-    return zeros
-
-
-def sprawl(point, grid):
-    blob_size = 0
-    queue = [point]
-    visited = set()
-    while queue:
-        blob_location = queue.pop(0)
-        if blob_location not in visited:
-            blob_size += 1
-            visited.add(blob_location)
-            queue.extend(look_for_zeros(blob_location, grid))
-            print(f"looked at {blob_location}")
-            print(f"Blob size is {blob_size}")
-    return visited, blob_size
-
-
-
 def biggest_group_size(grid):
-    biggest = 0
-    group_coords = []
-    for i in range(len(grid)):
-        for j in range(len(grid[i])):
-            group_coords.append((i, j))
-    
-    visited = set()
-    for coord in group_coords:
-        if coord not in visited and grid[coord[0]][coord[1]] == 0:
-            blob_visited, blob_size = sprawl(coord, grid)
-            print(blob_size)
-            for visited_point in blob_visited:
-                visited.add(visited_point)
-            if blob_size > biggest:
-                biggest = blob_size
-
-    return biggest
+    pass
 
 
 grid = [

@@ -20,9 +20,14 @@ Would be converted to:
     'p': (None, None)
 }
 
-Each key of the dictionary will be the data held by a parent node. Each value will be a tuple. The first element of the tuple will hold the data from the left child. The second element of the tuple will hold the data from the right child. If a node does not have a left and/or right child, the value in the corresponding spots in tuple will be None.
+Each key of the dictionary will be the data held by a parent node. Each value 
+will be a tuple. The first element of the tuple will hold the data from the 
+left child. The second element of the tuple will hold the data from the right 
+child. If a node does not have a left and/or right child, the value in the 
+corresponding spots in tuple will be None.
 
-Write a function that takes in the root of a tree and returns a dictionary representation of the tree.
+Write a function that takes in the root of a tree and returns a dictionary 
+representation of the tree.
 '''
 # DO NOT MODIFY THE NODE CLASS!
 class Node:
@@ -32,30 +37,9 @@ class Node:
         self.left = left
         self.right = right
 
-
-def add_to_dict(dict, node):
-    tup_1 = node.left.value if node.left else node.left
-    tup_2 = node.right.value if node.right else node.right
-    dict[node.value] = (tup_1, tup_2)
-
-def bt_to_arr(node):
-    if not node:
-        return []
-    return_arr = [node]
-    return_arr.extend(bt_to_arr(node.left))
-    return_arr.extend(bt_to_arr(node.right))
-    return return_arr
-
-
 def convert(tree):
     # Your solution here!
-    tree_dict = dict()
-    arr = bt_to_arr(tree)
-    print(arr)
-    for node in arr:
-        add_to_dict(tree_dict, node)
-    
-    return tree_dict
+    pass
     
 
 '''

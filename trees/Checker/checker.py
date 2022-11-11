@@ -40,17 +40,7 @@ class Node:
 
 def is_BST(node):
     # Your solution here!
-    if not node or (not node.left and not node.right):
-        return True
-    elif node.left and node.left.value > node.value:
-        return False
-    elif node.right and node.right.value < node.value:
-        return False
-    else:
-        return is_BST(node.left) and is_BST(node.right)
-
-
-    # return True
+    pass
 
 
 '''

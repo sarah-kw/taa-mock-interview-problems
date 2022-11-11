@@ -39,27 +39,8 @@ class Node:
 
 def compare(tree, search_value):
     # Write your solution here!
-    
-    if not tree:
-        return None
-    # Find smallest node in tree
-    node = tree
-    while node.left:
-        node = node.left
-    if search_value < node.value:
-        return "smaller"
+    pass
 
-    node = tree
-    while node.right:
-        node = node.right
-    if search_value > node.value:
-        return "bigger"
-    
-    return "spanned"
-
-
-
-    return
 
 
 '''
